@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="attendance_app_orange">#F07167</color>
+    <color name="attendance_app_royal_blue">#0081A7</color>
 </resources>
