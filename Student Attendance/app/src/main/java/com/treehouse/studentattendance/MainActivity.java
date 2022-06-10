@@ -23,12 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //action bar
-        ActionBar actionbar = getSupportActionBar();
-        actionbar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        //custom image for action bar
-        customActionBar(actionbar);
+        customActionBar();
 
 
         //when the app starts, the Report page fragment shows first
@@ -57,8 +52,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //custom image for action bar 
-    private void customActionBar(ActionBar actionbar) {
+
+
+
+    private void customActionBar() {
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        //custom image for action bar
         actionbar.setDisplayShowCustomEnabled(true);
         LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.custom_header, null);
