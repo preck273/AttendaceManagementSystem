@@ -7,3 +7,21 @@ JOIN student AS s
 ON s.student_id = e.student_id
 WHERE last_name = 'Oziwo';
 --------------------------------------------------
+
+// attend a class------attendancelog
+INSERT INTO presentlog(course_id, student_id)
+SELECT e1.course_id, e2.student_id
+FROM enroll AS e1
+JOIN enroll AS e2 ON e2.course_id = e1.course_id
+WHERE e2.course_id = 3;
+---------------------------------------------------------
+
+//Get the number of times a student is present
+
+SELECT COUNT(*) AS Present_no, p.student_id, s.first_name, s.last_name, c.course_name
+FROM presentlog AS p
+JOIN student AS s ON s.student_id = p.student_id
+JOIN course AS c ON c.course_id = p.course_id
+WHERE p.student_id = 2 AND c.course_name = 'English'
+GROUP BY student_id;
+----------------------------------------------------------------
