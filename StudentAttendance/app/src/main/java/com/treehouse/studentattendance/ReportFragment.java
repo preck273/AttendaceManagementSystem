@@ -14,24 +14,24 @@ import android.widget.Button;
 
 
 public class ReportFragment extends Fragment {
+
     View view;
     Button temporaryLogin;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_report, container, false);
-
         return view;
-
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //initialize views here
+        //initialize view here
 
         //temporary intent to login page
         temporaryLogin = view.findViewById(R.id.temp_login);
