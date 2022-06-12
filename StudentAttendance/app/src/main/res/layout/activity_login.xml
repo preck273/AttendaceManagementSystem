@@ -62,15 +62,31 @@
         app:layout_constraintTop_toBottomOf="@+id/login_passwordET"
         app:layout_constraintVertical_bias="0.19" />
 
-    <Button
-        android:id="@+id/login_registerBtn"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_loginBtn"
-        app:layout_constraintVertical_bias="0.110000014" />
+        app:layout_constraintVertical_bias="0.29000002">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Don't have an account?" />
+
+        <TextView
+            android:id="@+id/login_register_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="register"
+            android:textColor="@color/attendance_app_orange" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

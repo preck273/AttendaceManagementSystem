@@ -31,8 +31,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerTV"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintTop_toBottomOf="@+id/register_lastName_ET"
+        app:layout_constraintVertical_bias="0.050000012" />
 
     <EditText
         android:id="@+id/register_passwordET_one"
@@ -61,15 +61,63 @@
         app:layout_constraintTop_toBottomOf="@+id/register_passwordET_one"
         app:layout_constraintVertical_bias="0.19" />
 
-    <Button
-        android:id="@+id/register_loginBtn"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/register_firstName_ET"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Firstname"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerTV"
+        app:layout_constraintVertical_bias="0.120000005" />
+
+    <EditText
+        android:id="@+id/register_lastName_ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="LastName"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_registerBtn"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintTop_toBottomOf="@+id/register_firstName_ET"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_registerBtn">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Already have an account?" />
+
+        <TextView
+            android:id="@+id/register_login_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="login"
+            android:textColor="@color/attendance_app_orange" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

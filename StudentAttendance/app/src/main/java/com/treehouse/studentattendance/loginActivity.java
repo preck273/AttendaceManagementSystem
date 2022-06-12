@@ -4,18 +4,20 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class loginActivity extends AppCompatActivity {
 
     EditText emailET;
     EditText passwordET;
     Button loginBtn;
-    Button registerBtn;
+    TextView registerTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +30,23 @@ public class loginActivity extends AppCompatActivity {
         emailET = (EditText)findViewById(R.id.login_emailET);
         passwordET = (EditText)findViewById(R.id.login_passwordET);
         loginBtn = (Button) findViewById(R.id.login_loginBtn);
-        registerBtn = (Button)findViewById(R.id.login_registerBtn);
+        registerTV = (TextView) findViewById(R.id.login_register_TV);
 
         //login button listener
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+            }
+        });
+
+        //register button listener
+        registerTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(loginActivity.this, Register.class);
+                startActivity(intent);
             }
         });
 

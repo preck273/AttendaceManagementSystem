@@ -10,12 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Register extends AppCompatActivity {
     EditText emailET;
     EditText passwordOneET;
     Button registerBtn;
-    Button loginBtn;
+    TextView loginET;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class Register extends AppCompatActivity {
         emailET = (EditText)findViewById(R.id.register_emailET);
         passwordOneET = (EditText)findViewById(R.id.register_passwordET_one);
         registerBtn= (Button) findViewById(R.id.register_registerBtn);
-        loginBtn = (Button)findViewById(R.id.register_loginBtn);
+        loginET = (TextView)findViewById(R.id.register_login_TV);
 
         //register button listener
         registerBtn.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +40,7 @@ public class Register extends AppCompatActivity {
         });
 
         //login button listener
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        loginET.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
