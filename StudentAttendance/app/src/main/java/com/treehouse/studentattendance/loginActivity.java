@@ -1,6 +1,8 @@
 package com.treehouse.studentattendance;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,13 +13,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class loginActivity extends AppCompatActivity {
 
-    EditText emailET;
-    EditText passwordET;
-    Button loginBtn;
-    TextView registerTV;
+    private EditText email_address, student_password;
+    private Button loginBtn;
+    private final String URL_LOGIN = "http://10.0.2.2/attendanceApp/login.php";
+    private TextView registerTV;
+
+    //SessionManager sessionManage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +46,18 @@ public class loginActivity extends AppCompatActivity {
         //action bar
         customActionBar();
 
-        emailET = (EditText)findViewById(R.id.login_emailET);
-        passwordET = (EditText)findViewById(R.id.login_passwordET);
-        loginBtn = (Button) findViewById(R.id.login_loginBtn);
-        registerTV = (TextView) findViewById(R.id.login_register_TV);
+        //sessionManage = new SessionManager(this);
+
+        email_address = findViewById(R.id.email_address);
+        student_password = findViewById(R.id.student_password);
+        loginBtn =findViewById(R.id.login_loginBtn);
+        registerTV = findViewById(R.id.login_register_TV);
 
         //login button listener
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Login();
             }
         });
 
@@ -50,6 +71,66 @@ public class loginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void Login() {
+        final String email = this.email_address.getText().toString().trim();
+        final String password = this.student_password.getText().toString().trim();
+
+        if (!email.equals("") && !password.equals("")) {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonResponse = new JSONObject(response);
+
+                                boolean success = jsonResponse.getBoolean("success");
+                                if (success) {
+
+                                    //String fName = jsonObject.getString("name").trim();
+
+                                    // sessionManage.createSession();
+
+                                    Intent intent = new Intent(loginActivity.this, ReportFragment.class);
+                                    startActivity(intent);
+
+                                    Toast.makeText(loginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+                                }else {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(loginActivity.this);
+                                    builder.setMessage("Login Failed")
+                                            .setNegativeButton("Retry", null)
+                                            .create()
+                                            .show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(loginActivity.this, "Login Fail!!" + error.toString(), Toast.LENGTH_LONG).show();
+                        }
+                    })
+            {
+                // @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> data = new HashMap<>();
+                    data.put("email_address", email);
+                    data.put("student_password", password);
+                    return data;
+                }
+            };
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+            requestQueue.add(stringRequest);
+        }else {
+            Toast.makeText(this, "Fields can't be empty!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void customActionBar() {
