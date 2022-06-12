@@ -43,7 +43,7 @@
                 android:text="Add Course" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/course_courseList_IV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

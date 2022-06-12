@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 
 public class CourseFragment extends Fragment {
@@ -21,6 +22,7 @@ public class CourseFragment extends Fragment {
     View view;
     RecyclerView recyclerView;
     Button attendBtn;
+    ImageView courseList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,23 +42,31 @@ public class CourseFragment extends Fragment {
         //initialize view here
         recyclerView = view.findViewById(R.id.courseRecyclerView);
         attendBtn = view.findViewById(R.id.course_attend_btn);
-
+        courseList = view.findViewById(R.id.course_courseList_IV);
 
         //attend button listener
         attendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //goes to other fragments
-                switchFragment();
+                //goes to the attend fragment
+                switchFragment(new AttendFragment());
 
+            }
+        });
+
+        // plus(+) image listener to go to the course list fragment
+        courseList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchFragment(new CourseList());
             }
         });
     }
 
-    private void switchFragment(){
+    private void switchFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, new AttendFragment());
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
 }
