@@ -1,6 +1,6 @@
 package com.treehouse.studentattendance;
 
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -92,8 +93,8 @@ public class loginActivity extends AppCompatActivity {
 
                                     // sessionManage.createSession();
 
-                                    Intent intent = new Intent(loginActivity.this, ReportFragment.class);
-                                    startActivity(intent);
+                                    startActivity(new Intent(loginActivity.this, MainActivity.class));
+                                    finish();
 
                                     Toast.makeText(loginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
