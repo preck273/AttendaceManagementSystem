@@ -34,7 +34,7 @@ public class loginActivity extends AppCompatActivity {
 
     private EditText email_address, student_password;
     private Button loginBtn;
-    private final String URL_LOGIN = "http://10.232.11.169//attendanceApp/login.php";
+    private final String URL_LOGIN = "http://10.0.2.2/attendanceApp/login.php";
     private TextView registerTV;
 
     //SessionManager sessionManage;
