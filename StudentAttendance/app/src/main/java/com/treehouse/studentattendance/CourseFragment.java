@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class CourseFragment extends Fragment {
@@ -44,7 +45,7 @@ public class CourseFragment extends Fragment {
     Button attendBtn;
     ImageView courseList;
 
-    private static final String COURSE_URL = "http://192.168.1.105/attendanceApp/get_attendance_detail.php";
+    private static final String COURSE_URL = "http://192.168.1.100/attendanceApp/get_attendance_detail_two.php";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -107,9 +108,9 @@ public class CourseFragment extends Fragment {
                             for (int i = 0; i < courses.length(); i++) {
                                 JSONObject courseObject = courses.getJSONObject(i);
 
-                                String name = courseObject.getString("courseName");
-                                String startDate = courseObject.getString("startTime");
-                                String endDate = courseObject.getString("endTime");
+                                String name = courseObject.getString("course_name");
+                                String startDate = courseObject.getString("course_start_date");
+                                String endDate = courseObject.getString("course_end_date");
 
                                 //now create course object
                                 Course course = new Course(name, startDate, endDate);
@@ -118,7 +119,7 @@ public class CourseFragment extends Fragment {
                                 listOfCourses.add(course);
                             }
 
-                            adapter = new CourseAdapter(getContext(), listOfCourses);
+                            adapter = new CourseAdapter(requireContext(), listOfCourses);
                             recyclerView.setAdapter(adapter);
 
 
@@ -135,7 +136,7 @@ public class CourseFragment extends Fragment {
                     }
                 });
 
-        Volley.newRequestQueue(getContext()).add(stringRequest);
+        Volley.newRequestQueue(requireContext()).add(stringRequest);
     }
 
     private void switchFragment(Fragment fragment) {
