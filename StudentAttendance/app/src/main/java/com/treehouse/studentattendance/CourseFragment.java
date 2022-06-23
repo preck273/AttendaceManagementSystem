@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.se.omapi.SEService;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +56,10 @@ public class CourseFragment extends Fragment {
 
 
         return view;
+
     }
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -67,11 +71,13 @@ public class CourseFragment extends Fragment {
 
         listOfCourses = new ArrayList<>();
 
-        recyclerView = view.findViewById(R.id.courseRecyclerView);
+        recyclerView = (RecyclerView) view.findViewById(R.id.courseRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity())); // this set the layout vertical
 
+
         loadCourses();
+
 
 
         //attend button listener
@@ -96,6 +102,7 @@ public class CourseFragment extends Fragment {
 
     //get courses from URL
     private void loadCourses() {
+        //begin
         StringRequest stringRequest = new StringRequest(Request.Method.GET, COURSE_URL,
                 new Response.Listener<String>() {  //this method will be executed when there is no error
                     @Override
@@ -119,7 +126,7 @@ public class CourseFragment extends Fragment {
                                 listOfCourses.add(course);
                             }
 
-                            adapter = new CourseAdapter(requireContext(), listOfCourses);
+                            adapter = new CourseAdapter(getContext(), listOfCourses);
                             recyclerView.setAdapter(adapter);
 
 
@@ -137,7 +144,10 @@ public class CourseFragment extends Fragment {
                 });
 
         Volley.newRequestQueue(requireContext()).add(stringRequest);
+        //end
     }
+
+
 
     private void switchFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 
+//import android.hardware.biometrics.BiometricPrompt;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,7 @@ public class BiometricActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biometric);
-        attend_btn = view.findViewById(R.id.attend_btn);
+        //attend_btn = view.findViewById(R.id.attend_btn);
 
         executor = ContextCompat.getMainExecutor(this);
 
@@ -65,7 +66,7 @@ public class BiometricActivity extends AppCompatActivity {
         // Prompt appears when user clicks "Log in".
         // Consider integrating with the keystore to unlock cryptographic operations,
         // if needed by your app.
-        attend_btn = view.findViewById(R.id.attend_btn);
+      //  attend_btn = view.findViewById(R.id.attend_btn);
         attend_btn.setOnClickListener(view -> {
             biometricPrompt.authenticate(promptInfo);
         });
