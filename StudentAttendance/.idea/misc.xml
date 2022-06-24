@@ -5,7 +5,12 @@
       <map>
         <entry key="..\:/Users/Pepelito/Desktop/Year 2/Period 2/project-resit/AttendaceManagementSystem-main/StudentAttendance/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Pepelito/Desktop/Year 2/Period 2/project-resit/AttendaceManagementSystem-main/StudentAttendance/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Pepelito/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/activity_biometric.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Pepelito/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/activity_teacher_login.xml" value="0.264" />
+        <entry key="..\:/Users/Pepelito/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_attend.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Pepelito/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_course.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Pepelito/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_course_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Pepelito/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_teacher_course.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/drawable/actionbar_background.xml" value="0.141" />
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/drawable/attendance_app_logo1.xml" value="0.141" />
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/drawable/background_splashscreen.xml" value="0.11" />
@@ -25,7 +30,7 @@
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_course.xml" value="0.25" />
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_course_list.xml" value="0.25" />
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_report.xml" value="0.25" />
+        <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_report.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_teacher_course.xml" value="0.25" />
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_teacher_profile.xml" value="0.25" />
         <entry key="..\:/Users/jk/Documents/GitHub/AttendaceManagementSystem/StudentAttendance/app/src/main/res/layout/fragment_teacher_report.xml" value="0.22916666666666666" />

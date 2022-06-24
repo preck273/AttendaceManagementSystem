@@ -11,4 +11,70 @@
         android:layout_height="match_parent"
         android:text="Attend fragment" />
 
+    <TextView
+        android:id="@+id/hour"
+        android:layout_width="41dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="216dp"
+        android:text="00"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/min"
+        android:layout_width="41dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="216dp"
+        android:text="00"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/sec"
+        android:layout_width="41dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="216dp"
+        android:text="00"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="12dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="216dp"
+        android:text=":"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="12dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="216dp"
+        android:text=":"
+        android:textSize="34sp" />
+
+    <Button
+        android:id="@+id/start_btn"
+        android:layout_width="111dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="158dp"
+        android:text="Start" />
+
+    <Button
+        android:id="@+id/attend_btn"
+        android:layout_width="111dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="158dp"
+        android:text="Attend" />
+
+
+
+
 </FrameLayout>

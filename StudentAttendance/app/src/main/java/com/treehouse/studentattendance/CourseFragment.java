@@ -46,7 +46,7 @@ public class CourseFragment extends Fragment {
     Button attendBtn;
     ImageView courseList;
 
-    private static final String COURSE_URL = "http://192.168.1.100/attendanceApp/get_attendance_detail_two.php";
+    private static final String COURSE_URL = "http://10.0.2.2/attendanceApp/get_attendance_detail_two.php";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
