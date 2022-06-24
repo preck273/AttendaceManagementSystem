@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.13" />
 
     <EditText
-        android:id="@+id/teacher_email_address"
+        android:id="@+id/email_address"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -47,7 +47,7 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teacher_email_address" />
+        app:layout_constraintTop_toBottomOf="@+id/email_address" />
 
     <Button
         android:id="@+id/teacher_login_loginBtn"
