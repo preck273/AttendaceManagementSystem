@@ -35,7 +35,8 @@ public class loginActivity extends AppCompatActivity {
     private EditText email_address, student_password;
     private Button loginBtn;
     private final String URL_LOGIN = "http://192.168.1.100/attendanceApp/login.php";
-    private TextView registerTV;
+    private TextView registerTV, teacherLogin;
+
 
     //SessionManager sessionManage;
 
@@ -53,6 +54,7 @@ public class loginActivity extends AppCompatActivity {
         student_password = findViewById(R.id.student_password);
         loginBtn =findViewById(R.id.login_loginBtn);
         registerTV = findViewById(R.id.login_register_TV);
+        teacherLogin = findViewById(R.id.login_teacherLogin_TV);
 
         //login button listener
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +70,15 @@ public class loginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(loginActivity.this, Register.class);
+                startActivity(intent);
+            }
+        });
+
+        teacherLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(loginActivity.this, TeacherLogin.class);
                 startActivity(intent);
             }
         });

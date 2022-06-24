@@ -95,13 +95,15 @@
         app:layout_constraintTop_toBottomOf="@+id/first_name" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_registerBtn">
+        app:layout_constraintTop_toBottomOf="@+id/register_registerBtn"
+        app:layout_constraintVertical_bias="0.35000002">
 
         <TextView
             android:id="@+id/textView4"
@@ -117,6 +119,32 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:text="login"
+            android:textColor="@color/attendance_app_orange" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.38">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Are you a teacher? " />
+
+        <TextView
+            android:id="@+id/register_teacher_login_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="login here"
             android:textColor="@color/attendance_app_orange" />
     </LinearLayout>
 

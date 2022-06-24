@@ -35,6 +35,7 @@ public class Register extends AppCompatActivity {
     private static String URL_REGISTER ="http://10.0.2.2/attendanceApp/register.php";
     private Button registerBtn;
     private TextView loginET;
+    private TextView teacherLoginTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class Register extends AppCompatActivity {
         student_password = findViewById(R.id.student_password);
         registerBtn= (Button) findViewById(R.id.register_registerBtn);
         loginET = (TextView)findViewById(R.id.register_login_TV);
+        teacherLoginTV = findViewById(R.id.register_teacher_login_TV);
 
         //register button listener
         registerBtn.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +67,17 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Register.this, loginActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //teacher login button listener
+        teacherLoginTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Register.this, TeacherLogin.class);
                 startActivity(intent);
 
             }
