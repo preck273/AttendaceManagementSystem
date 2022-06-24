@@ -34,14 +34,16 @@ public class ReportFragment extends Fragment {
         //initialize view here
 
         //temporary intent to login page
-        temporaryLogin = view.findViewById(R.id.temp_login);
-        temporaryLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //when in fragment instead of using ReportFragment.this,  use getActivity() instead
-                Intent intent = new Intent(getActivity(), loginActivity.class);
-                startActivity(intent);
-            }
-        });
+//        temporaryLogin = view.findViewById(R.id.temp_login);
+//        temporaryLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //when in fragment instead of using ReportFragment.this,  use getActivity() instead
+//                Intent intent = new Intent(getActivity(), loginActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
     }
 }
