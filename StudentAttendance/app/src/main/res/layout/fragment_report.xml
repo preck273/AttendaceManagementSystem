@@ -22,22 +22,53 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView15">
+        android:layout_below="@id/textView15"
+        android:layout_margin="20dp"
+        android:background="@color/white">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:background="@color/attendance_app_orange">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Student Name"
+                android:textColor="@color/white"
+                android:padding="5sp"
+                android:textSize="16sp"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Present"
+                android:textColor="@color/white"
+                android:padding="5sp"
+                android:textSize="16sp"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                />
 
-        <TableRow
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Absent"
+                android:textColor="@color/white"
+                android:padding="5sp"
+                android:textSize="16sp"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                />
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/studentReportRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
     </TableLayout>
 </RelativeLayout>

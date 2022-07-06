@@ -29,6 +29,9 @@
             android:name=".loginActivity"
             android:exported="false" />
         <activity
+            android:name=".BiometricActivity"
+            android:exported="false"/>
+        <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/splashscreen">
