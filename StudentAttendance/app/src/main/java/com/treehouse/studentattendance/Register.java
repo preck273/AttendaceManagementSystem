@@ -32,7 +32,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
     private EditText first_name, last_name, email_address, student_password;
     private TextView tvStatus;
-    private static String URL_REGISTER ="http://10.0.2.2/attendanceApp/register.php";
+    private static String URL_REGISTER ="http://192.168.43.46/attendanceApp/register.php";
     private Button registerBtn;
     private TextView loginET;
     private TextView teacherLoginTV;

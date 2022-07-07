@@ -39,7 +39,7 @@ public class BiometricActivity extends AppCompatActivity {
 
 
 
-//                Intent i = new Intent(BiometricActivity.this, attendFragment.getClass());
+//                Intent i = new Intent(BiometricActivity.this, AttendFragment.class);
 //                startActivity(i);
             }
 

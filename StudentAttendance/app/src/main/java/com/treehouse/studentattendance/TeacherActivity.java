@@ -1,47 +1,54 @@
 package com.treehouse.studentattendance;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Context;
 import android.os.Bundle;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
-public class MainActivity extends AppCompatActivity {
+import com.treehouse.studentattendance.databinding.ActivityTeacherBinding;
 
-    BottomNavigationView bottomNavigationView;
+public class TeacherActivity extends AppCompatActivity {
+
+    BottomNavigationView bottomNavigationViewTeacher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_teacher);
 
-        //action bar
-        customActionBar();
+        //rocustomActionBar();
 
-        //when the app starts, the Report page fragment shows first
-        replaceFragment(new CourseFragment());
+        replaceFragment(new TeacherReportFragment());
 
-        bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottomNav);
-        bottomNavigationView.setOnItemSelectedListener( item -> {
+        bottomNavigationViewTeacher = (BottomNavigationView)findViewById(R.id.bottomNavTeacher);
+        bottomNavigationViewTeacher.setOnItemSelectedListener( item -> {
             //when user select any button, it is stored in the item variable
 
             switch (item.getItemId()){
 
-                case R.id.report:
-                    replaceFragment(new ReportFragment());
+                case R.id.teacher_report:
+                    replaceFragment(new TeacherReportFragment());
                     break;
-                case R.id.course:
-                    replaceFragment((new CourseFragment()));
+                case R.id.teacher_timer:
+                    replaceFragment((new TeacherCourseFragment()));
                     break;
-                case R.id.profile:
-                    replaceFragment(new ProfileFragment());
+                case R.id.teacher_profile:
+                    replaceFragment(new TeacherProfileFragment());
                     break;
             }
 
@@ -63,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setCustomView(view);
     }
 
-    //method to replace the frame layout in the main activity layout by the fragment layouts
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.replace(R.id.frameLayoutTeacher, fragment);
         fragmentTransaction.commit();
     }
+
 
 }

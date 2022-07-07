@@ -33,7 +33,7 @@ public class TeacherLogin extends AppCompatActivity {
     private TextView teacherEmail, teacherPass, studentLogin;
     private Button loginBtn;
 
-    private static String URL_LOGIN = "http://10.0.2.2/attendanceApp/teacherLogin.php";
+    private static String URL_LOGIN = " http://192.168.43.46/attendanceApp/teacherLogin.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +84,8 @@ public class TeacherLogin extends AppCompatActivity {
 
                                         // sessionManage.createSession();
 
-                                        Intent intent = new Intent(TeacherLogin.this, TeacherReportFragment.class);
-                                        startActivity(intent);
+                                        startActivity(new Intent(TeacherLogin.this, TeacherActivity.class));
+                                        finish();
 
                                         Toast.makeText(TeacherLogin.this, "Login Successful", Toast.LENGTH_SHORT).show();
 

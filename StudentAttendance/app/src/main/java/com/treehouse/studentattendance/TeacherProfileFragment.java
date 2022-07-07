@@ -36,7 +36,7 @@ public class TeacherProfileFragment extends Fragment {
     private TextView firstName, lastName, email, type;
     List<User> userList;
 
-    private static final String TEACHER_PROFILE_URL = "http://10.0.2.2/attendanceApp/get_profile_detail.php";
+    private static final String TEACHER_PROFILE_URL = "http://192.168.43.46/attendanceApp/get_teacher_profile_detail.php";
 
 
     @Override

@@ -37,7 +37,7 @@ public class ReportFragment extends Fragment {
     StudentAdapter studentAdapter;
     List<Attendance> attendanceList;
 
-    private static final String ATTENDANCE_URL = "http://10.0.2.2/attendanceApp/get_attendance_detail_two.php";
+    //private static final String ATTENDANCE_URL = "http://192.168.43.46/attendanceApp/get_students_attendance.php";
 
 
     @Override
@@ -53,12 +53,12 @@ public class ReportFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //initialize view here
-        attendanceList = new ArrayList<>();
-        recyclerView = (RecyclerView) view.findViewById(R.id.studentReportRecyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        attendanceList = new ArrayList<>();
+//        recyclerView = (RecyclerView) view.findViewById(R.id.studentReportRecyclerView);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        loadAttendance();
+        //loadAttendance();
 
         //temporary intent to login page
 //        temporaryLogin = view.findViewById(R.id.temp_login);
@@ -74,50 +74,51 @@ public class ReportFragment extends Fragment {
 
     }
 
-    private void loadAttendance() {
-        //begin
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, ATTENDANCE_URL,
-                new Response.Listener<String>() {  //this method will be executed when there is no error
-                    @Override
-                    public void onResponse(String response) {
-                        //array of data that we'll save from the URL
-                        //first convert to Json array
-                        try {
-                            JSONArray attendances = new JSONArray(response);
-                            //now loop through all items in the array
-                            for (int i = 0; i < attendances.length(); i++) {
-                                JSONObject attendanceObject = attendances.getJSONObject(i);
-
-                                String student_name = attendanceObject.getString("student_name");
-                                String student_presence = attendanceObject.getString("presence");
-                                String student_absence = attendanceObject.getString("absence");
-
-                                //now create course object
-                                Attendance attendance = new Attendance(student_name, student_presence, student_absence);
-
-                                //add this course to the course list
-                                attendanceList.add(attendance);
-                            }
-
-                            studentAdapter = new StudentAdapter(getContext(), attendanceList);
-                            recyclerView.setAdapter(studentAdapter);
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) { //when we have errors
-                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_LONG).show();
-
-                    }
-                });
-
-        Volley.newRequestQueue(requireContext()).add(stringRequest);
-        //end
-    }
+//    private void loadAttendance() {
+//        //begin
+//        StringRequest stringRequest = new StringRequest(Request.Method.GET, ATTENDANCE_URL,
+//                new Response.Listener<String>() {  //this method will be executed when there is no error
+//                    @Override
+//                    public void onResponse(String response) {
+//                        //array of data that we'll save from the URL
+//                        //first convert to Json array
+//                        try {
+//                            JSONArray attendances = new JSONArray(response);
+//                            //now loop through all items in the array
+//                            for (int i = 0; i < attendances.length(); i++) {
+//                                JSONObject attendanceObject = attendances.getJSONObject(i);
+//
+//                                String student_firstName = attendanceObject.getString("first_name");
+//                                String student_lastName = attendanceObject.getString("last_name");
+//                                String student_presence = attendanceObject.getString("Present_no");
+//                                String student_name = student_firstName +" " +student_lastName;
+//
+//                                //now create course object
+//                                Attendance attendance = new Attendance(student_name, student_presence);
+//
+//                                //add this course to the course list
+//                                attendanceList.add(attendance);
+//                            }
+//
+//                            studentAdapter = new StudentAdapter(getContext(), attendanceList);
+//                            recyclerView.setAdapter(studentAdapter);
+//
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) { //when we have errors
+//                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_LONG).show();
+//
+//                    }
+//                });
+//
+//        Volley.newRequestQueue(requireContext()).add(stringRequest);
+//        //end
+//    }
 
 }

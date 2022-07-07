@@ -3,11 +3,10 @@ package com.treehouse.studentattendance;
 public class Attendance {
     private String name, presence, absence;
 
-    public Attendance(String name, String presence, String absence) {
+    public Attendance(String name, String presence) {
         this.name = name;
         this.presence = presence;
-        if(absence == null)
-            this.absence = "0";
+        this.absence = "0";
     }
 
     public String getName() {

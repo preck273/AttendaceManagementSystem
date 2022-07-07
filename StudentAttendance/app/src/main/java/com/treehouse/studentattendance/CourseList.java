@@ -36,7 +36,7 @@ public class CourseList extends Fragment {
 
     List<Course> listOfCourses;
 
-    private static final String COURSE_LIST_URL = "http://10.0.2.2/attendanceApp/get_course_detail.php";
+    private static final String COURSE_LIST_URL = "http://192.168.43.46/attendanceApp/get_course_detail.php";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

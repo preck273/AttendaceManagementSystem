@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Report"
+        android:icon="@drawable/ic_report_icon"
+        android:id="@+id/teacher_report"/>
+    <item android:title="Timer"
+        android:icon="@drawable/ic_courses_icon"
+        android:id="@+id/teacher_timer"/>
+    <item android:title="Profile"
+        android:icon="@drawable/ic_profile_icon"
+        android:id="@+id/teacher_profile"/>
+
+</menu>
